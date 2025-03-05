@@ -9,6 +9,9 @@
 - Automates the creation of new user accounts across Cisco switches
 - Written in Go for efficiency and portability
 
+## Notes
+This is not fully fleshed out. There's not a lot of error checking (none at all actually). Use at your own risk. Also this assumes that your login takes you straight to `exec` mode on the switch. Future plans are to allow for `enable` if needed. 
+
 ## Prerequisites
 Ensure you have the following installed:
 - Network access to the target Cisco switches
