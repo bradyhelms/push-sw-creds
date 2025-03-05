@@ -47,7 +47,13 @@ func main() {
 		if err != nil {
 			log.Fatalf("Failed to run command: %s", err)
 		}
+		fmt.Printf("Command output: %s\n", output)
 
+		command = fmt.Sprintf("write memory")
+		output, err = session.CombinedOutput(command)
+		if err != nil {
+			log.Fatalf("Failed to run command: %s", err)
+		}
 		fmt.Printf("Command output: %s\n", output)
 	}
 
@@ -64,6 +70,7 @@ func getAdminCreds() (admin_user, admin_pass string) {
 	}
 
 	admin_pass = string(pass)
+	fmt.Println()
 	return admin_user, admin_pass
 }
 
@@ -77,6 +84,7 @@ func getUserCreds() (userUsername, userPass string) {
 	}
 
 	userPass = string(pass)
+	fmt.Println()
 	return userUsername, userPass
 }
 
